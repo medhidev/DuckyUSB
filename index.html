@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script/main.js"></script>
+    <title>CMD to Arduino</title>
+</head>
+<body>
+    <div id="Left">
+        <h1><strong>INPUT</strong></h1>
+        <textarea id="userContent" cols="30" rows="30" placeholder="Ecrire sa Commande ici ..."></textarea>
+        <p>
+            <input id="convert" type="submit" value="Convertir" onclick="ConvertToArduino()">
+            <input id="reset" type="reset" value="Reinitialiser">
+        </p>
+        <textarea id="code" cols="30" rows="20" placeholder="Code Arduino Générer" disabled="disabled"></textarea>
+    </div>
+    <div id="right">
+        <img src="images/doc.jpg" alt="Documentation DuckyUSB" width="800px">
+    </div>
+    <div id="ref">
+        <a href="https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference" target="_blank">Documentation Hak5</a>
+        <a href=""></a>
+    </div>
+</body>
+
+<footer>
+    Droit auteur Medhi &copy; 2023 / 2024
+</footer>
+</html>
