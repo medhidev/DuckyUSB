@@ -1,0 +1,57 @@
+body
+{
+    font-family: Consolas;
+    color: yellow;
+    background-color: rgb(26, 26, 26);
+}
+
+textarea
+{
+    background-color: rgb(70, 70, 70);
+    color: yellow;
+    border: none;
+}
+
+textarea:focus {
+    outline:  none;
+}
+
+#convert
+{
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+#reset
+{
+    background-color: rgb(255, 187, 0);
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+/* #left
+{
+
+} */
+
+nav
+{
+    background-color: #161616;
+    padding: 10px;
+}
+
+
+a
+{
+    color: yellow;
+}
+/* LINK */
+a:hover
+{
+    color: rgb(255, 196, 0);
+    transition: 1000ms;
+}
+a{text-decoration: none;}
