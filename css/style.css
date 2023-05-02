@@ -3,12 +3,13 @@ body
     font-family: Consolas;
     color: yellow;
     background-color: rgb(26, 26, 26);
+    margin: 0;
 }
 
 textarea
 {
     background-color: rgb(70, 70, 70);
-    color: yellow;
+    color: rgb(212, 138, 0);
     border: none;
 }
 
@@ -32,26 +33,30 @@ textarea:focus {
     border: none;
 }
 
-/* #left
-{
-
-} */
-
 nav
 {
     background-color: #161616;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
 }
 
+/* LINK */
 
 a
 {
     color: yellow;
 }
-/* LINK */
 a:hover
 {
     color: rgb(255, 196, 0);
     transition: 1000ms;
 }
 a{text-decoration: none;}
+
+footer
+{
+    position: fixed;
+    bottom: 0;
+}

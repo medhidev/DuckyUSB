@@ -12,27 +12,49 @@
 <body>
     <nav>
         <a href="#"><img src="images/logo.ico" alt="logo" width="50"></a>
-        <h1><a href="datasheet.html">DOCUMENTATION</a></h1>
-        <h1><a href="more.html">MORE</a></h1>
+        <div class="right">
+            <h1><a href="datasheet.html">DOCUMENTATION</a></h1>
+            <h1><a href="more.html">HELP</a></h1>
+        </div>
     </nav>
-    <div id="Left">
-        <h1><strong>INPUT</strong></h1>
-        <textarea id="userContent" cols="30" rows="30" placeholder="Ecrire sa Commande ici ..."></textarea>
-        <p>
-            <input id="convert" type="submit" value="Convertir" onclick="ConvertToArduino()">
-            <input id="reset" type="reset" value="Reinitialiser">
-        </p>
-        <textarea id="code" cols="30" rows="20" placeholder="Code Arduino Générer" disabled="disabled"></textarea>
-    </div>
-    <div id="right">
-    </div>
+    <form>
+        <table style="margin: 0 auto;">
+            <tr>
+                <td style="text-align: center;">
+                    <h1><strong>INPUT</strong></h1>
+                </td>
+                <td>
+
+                </td>
+                <td style="text-align: center;">
+                    <h1><strong>CONVERT</strong></h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea id="userContent" cols="50" rows="40" placeholder="Ecrire sa Commande ici ..."></textarea>
+                    
+                </td>
+                <td style="text-align: center; padding: 50px;">
+                    <p>
+                        <input id="convert" type="submit" value="Compiler" style="padding: 10px;" onclick="main()">
+                    </p>
+                    <input id="reset" type="reset" value="Reset" style="padding: 10px;">
+                </td>
+                <td>
+                    <textarea id="code" cols="50" rows="40" placeholder="Code Arduino Générer" disabled="disabled" style="color: rgb(47, 255, 227);"></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+<footer>
     <div id="ref">
         <a href="https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference" target="_blank">Documentation Hak5</a>
         <a href=""></a>
     </div>
-</body>
-
-<footer>
-    Droit auteur Medhi &copy; 2023 / 2024
+    <!-- CopyRight -->
+    Droit auteur medhidev &copy; 2023 / 2024
 </footer>
 </html>
