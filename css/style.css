@@ -17,6 +17,14 @@ textarea:focus {
     outline:  none;
 }
 
+#copy
+{
+    background-color: #84e900;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
 #convert
 {
     background-color: yellow;
@@ -39,11 +47,11 @@ nav
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* LINK */
-
 a
 {
     color: yellow;
@@ -55,8 +63,21 @@ a:hover
 }
 a{text-decoration: none;}
 
-footer
+#rightBottom
 {
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    right: 0;
+}
+
+#leftBottom
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#doc
+{
+    padding-left: 50px;
 }

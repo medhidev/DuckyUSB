@@ -12,8 +12,61 @@
     <nav>
         <a href="index.html"><img src="images/logo.ico" alt="logo" width="50"></a>
         <h1><a href="#">DOCUMENTATION</a></h1>
-        <h1><a href="more.html">MORE</a></h1>
+        <h1><a href="more.html">HELP</a></h1>
     </nav>
-    <img src="images/doc.jpg" alt="Documentation DuckyUSB" width="800px">
+    <div id="doc">
+        <h1><i>Legende</i></h1>
+        <br>
+        <i>
+            {} : obligatoire <br>
+            [] : optionnel <br>
+            () : spécifique <br>
+            <br>
+            int : entier <br>
+            str : chaîne de caractères
+            <br>
+        </i>
+        <h1>ACTIONS</h1><br>
+
+        STRING[LN] {str} -> taper du texte <br>
+        DELAY {int} -> attendre (temps en ms) <br>
+        WHILE (CONDITION) -> répéter (en boucle ou un nombre de fois définit) <br>
+        END_WHILE-> fin de la boucle <br>
+        IF (CONDITION) -> condition Simple<br>
+        END_IF -> fermer la condition<br>
+        <br>
+        <h1>KEY BIND</h1><br>
+
+        ENTER -> touche entrée <br>
+        CTRL -> touche controle <br>
+        GUI -> touche windows <br>
+        ALT -> touche alt <br>
+        CAPSLOCK -> touche Majuscule <br>
+        TAB -> touche tabulation <br>
+        SPACE -> touche espace <br>
+        ESC -> touche echap <br>
+        DOWN -> flèche du bas <br>
+        UP -> flèche du haut <br>
+        RIGHT -> flèche de droite <br>
+        LEFT -> flèche de gauche <br>
+        <br>
+        <h1>ADDED (SOON)</h1>
+
+        ECHO {str} -> afficher dans un terminal <br>
+        :: {str} -> commenter du code <br>
+        CMD -> ouvre le terminal <br>
+        RUN {str}.exe -> execute un programme <br>
+        INSTALL {str} -> installe un programme sur l'ordinateur <br>
+        SCREEN -> prend un capture d'écrant <br>
+        POP -> affiche une pop up windows <br>
+        HOLD (BIND) -> enfoncer une touche <br>
+        INPUT (BIND) -> détechte la touche appuyé <br>
+        <br>
+        <h1>OPTIONAL</h1><br>
+
+        MOUSE({int}, {int}) -> déplacer le curseur à la position x et y <br>
+        CLICK -> click de souris <br>
+        SSH {str}@{str} -> connection à distance utilisateur@IP <br><br>
+    </div>
 </body>
 </html>

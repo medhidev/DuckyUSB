@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script src="script/main.js"></script>
     <title>Home | Ducky</title>
 </head>
 <body>
     <nav>
         <a href="#"><img src="images/logo.ico" alt="logo" width="50"></a>
-        <div class="right">
-            <h1><a href="datasheet.html">DOCUMENTATION</a></h1>
-            <h1><a href="more.html">HELP</a></h1>
-        </div>
+        <h1><a href="datasheet.html">DOCUMENTATION</a></h1>
+        <h1><a href="more.html">HELP</a></h1>
     </nav>
     <form>
         <table style="margin: 0 auto;">
@@ -37,7 +34,10 @@
                 </td>
                 <td style="text-align: center; padding: 50px;">
                     <p>
-                        <input id="convert" type="submit" value="Compiler" style="padding: 10px;" onclick="main()">
+                        <input id="copy" type="button" value="Copier" onclick='copier()' style="padding: 10px;">
+                    </p><br>
+                    <p>
+                        <input id="convert" type="button" value="← # →" onclick='main()' style="padding: 10px;">
                     </p>
                     <input id="reset" type="reset" value="Reset" style="padding: 10px;">
                 </td>
@@ -48,13 +48,15 @@
         </table>
     </form>
 </body>
-
+<script src="script/main.js"></script>
 <footer>
-    <div id="ref">
-        <a href="https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference" target="_blank">Documentation Hak5</a>
-        <a href=""></a>
+    <div id="rightBottom">
+        <a href="https://docs.hak5.org/hak5-usb-rubber-ducky/duckyscript-tm-quick-reference" target="_blank">Doc Hak5</a>
     </div>
-    <!-- CopyRight -->
-    Droit auteur medhidev &copy; 2023 / 2024
+    <div id="leftBottom">
+        <!-- CopyRight -->
+        Droit d'auteur medhidev &copy; 2023 / 2024
+    </div>
 </footer>
+
 </html>
