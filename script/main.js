@@ -1,8 +1,3 @@
-// window.addEventListener('load', function() {
-//     // votre code ici, y compris l'appel à main()
-//     main();
-// });
-
 function main() {
     let userInsert = document.querySelector("#userContent").value;
 
@@ -26,9 +21,11 @@ function main() {
 
         //Delay
         delay(500);
+    `;
 
-        ${convert(userInsert)}
+    code += line(userInsert, code);
 
+    code += `
         // Ending stream
         Keyboard.end();
     }
@@ -37,24 +34,27 @@ function main() {
     void loop() {}
     `;
 
-    // let converted = '';
-    // for (let i = 0; i < userInsert.length; i++)
-    // {
-    //     if(userInsert[i] == '\n')
-    //     {
-    //         code += convert(converted) + ';\n';
-    //         // reset
-    //         converted = '';
-    //     }
-    //     else if(i < userInsert.length)
-    //     {
-    //         code += convert(converted) + ';\n';
-    //     }
-
-    //     converted += userInsert[i];
-    // }
-
     document.querySelector("#code").value = code;
+}
+
+function line(user, code)
+{
+    word = '';
+    code += '\t';
+    for(let i = 0; i < user.length; i++)
+    {
+        if(user[i] == '\n')
+        {
+            code += convert(word) + ';\n\t';
+            word = '';
+        }
+        else
+        {
+            word += user[i];
+        }
+    }
+
+    return code;
 }
 
 function convert(value)
@@ -62,6 +62,14 @@ function convert(value)
     let commands = {
         'STRING': 'Keyboard.print(F(""))',
         'DELAY': 'delay()',
+        'WHILE': `while ()
+        {`,
+        'END_WHILE': `
+        }`,
+        'IF': `if ()
+        {`,
+        'END_IF': `
+        }`,
         'ENTER': 'typeKey(KEY_RETURN)',
         'CTRL': 'typeKey(KEY_CTRL)',
         'GUI': 'Keyboard.press(KEY_LEFT_GUI)',
@@ -74,7 +82,14 @@ function convert(value)
         'UP': 'typeKey(KEY_UP_ARROW)',
         'RIGHT': 'typeKey(KEY_RIGHT_ARROW)',
         'LEFT': 'typeKey(KEY_LEFT_ARROW)',
-        'DEL' : 'typeKey(KEY_DELETE)'
+        'DEL' : 'typeKey(KEY_DELETE)',
+        'CMD' : `
+        Keyboard.press(KEY_LEFT_GUI);
+        Keyboard.press('r');
+        Keyboard.releaseAll();
+
+        delay(500);
+        Keyboard.print(F("c;d"));`
       };
       
       return commands[value] || value;
@@ -123,6 +138,10 @@ function copier()
     navigator.clipboard.writeText(textToCopy)
     .then(() => {
         document.querySelector("#copy").value = 'Coller';
+        let timeoutID = setTimeout(function() {
+            document.querySelector("#copy").value = 'Copier';
+        }, 2000);
+
     })
     .catch(err => {
         console.error("Erreur lors de la copie dans le presse-papier : ", err);

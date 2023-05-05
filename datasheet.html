@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <script src="script/main.js"></script>
     <title>Datasheet | Ducky</title>
 </head>
 <body>
@@ -14,26 +15,34 @@
         <h1><a href="#">DOCUMENTATION</a></h1>
         <h1><a href="more.html">HELP</a></h1>
     </nav>
+    <style>
+        h1
+        {
+            color: rgb(255, 187, 0);
+        }
+    </style>
     <div id="doc">
         <h1><i>Legende</i></h1>
         <br>
         <i>
             {} : obligatoire <br>
             [] : optionnel <br>
-            () : spécifique <br>
+            () : spécifique aux Languages<br>
             <br>
             int : entier <br>
             str : chaîne de caractères
             <br>
         </i>
+        ___________________________ <br><br>
+
         <h1>ACTIONS</h1><br>
 
         STRING[LN] {str} -> taper du texte <br>
         DELAY {int} -> attendre (temps en ms) <br>
-        WHILE (CONDITION) -> répéter (en boucle ou un nombre de fois définit) <br>
-        END_WHILE-> fin de la boucle <br>
-        IF (CONDITION) -> condition Simple<br>
-        END_IF -> fermer la condition<br>
+        WHILE (CONDITION) -> répéter (en boucle ou un nombre de fois définit) * <br>
+        END_WHILE-> fin de la boucle *<br>
+        IF (CONDITION) -> condition Simple *<br>
+        END_IF -> fermer la condition *<br>
         <br>
         <h1>KEY BIND</h1><br>
 
@@ -67,6 +76,77 @@
         MOUSE({int}, {int}) -> déplacer le curseur à la position x et y <br>
         CLICK -> click de souris <br>
         SSH {str}@{str} -> connection à distance utilisateur@IP <br><br>
+
+        ___________________________ <br><br>
+
+        <h1>EXEMPLE PAYLOAD</h1><br>
+
+        Pour commencer j'ai pensé judicieux d'afficher la fameuse phrase Hello World sur un terminal de votre ordinateur<br><br>
+        <code>
+            <table id="code">
+                <td>
+                    CMD<br>
+                    STRING 'Hello World'<br>
+                </td>
+            </table>
+        </code><br>
+
+        qui se transforme en arduino en : <br><br>
+        <code>
+            <table id="code">
+                <td style="color: aqua;">                    
+                    // Script created by medhidev <br>
+                    // beta v1.0 <br><br>
+                
+                    #include "Keyboard.h"<br>
+                    void typeKey(uint8_t key)<br>
+                    {<br>
+                        Keyboard.press(key);<br>
+                        delay(50);<br>
+                        Keyboard.release(key);<br>
+                    }<br><br>
+                
+                    void setup()<br>
+                    {<br>
+                        // Begining the Keyboard stream<br>
+                        Keyboard.begin();<br><br>
+                
+                        //Delay<br>
+                        delay(500);<br><br>
+                
+                        //Terminal<br>
+                        Keyboard.press(KEY_LEFT_GUI);<br>
+                        Keyboard.press(KEY_LEFT_GUI);<br>
+                        Keyboard.press('r');<br>
+                        Keyboard.releaseAll();<br><br>
+
+                        delay(500);<br>
+                        Keyboard.print(F("c;d"));<br><br>
+                
+                        // Ending stream<br>
+                        Keyboard.end();<br>
+                    }<br>
+                    
+                    /* Unused endless loop */<br>
+                    void loop() {}<br>
+                </td>
+            </table>
+        </code><br><br>
+        
+        <u><i>Comment fonctionne ce code ?</i></u><br><br>
+        Tout d'abord la commande <strong>CMD</strong> est une fonction qu'y est propre au language de ce <a href="more.html#payload" title="explication de ce qu'est un payload">payload</a>. <br>
+        Elle permet d'executer 3 succetion de touche différente <strong>WINDOWS + R et écrire cmd</strong> . <br>
+        Pour ce qui conerne le mot <strong>STRING</strong> il permet d'afficher notre message Hello World; Ou plus tôt d'écrire ce mot.
+        <strong>STRING</strong> permet surtout d'écrire du code. <br>
+        Et si vous l'avez remarqués; le texte cmd(azerty) -> c;d(qwerty). C'est un problème qu'ai j'ai rencontré en voulant executé mon payload<br>
+        <i>* Problème de la librairie Keyboard.h qui n'est pas possible de modifier à cause d'une restriction d'accès au code</i>. <br>
+        Problème évidement que je résous directement sur ce site où le texte que vous saisisez et directement traduit en qwerty<br><br>
+
+        J'espère en tout cas avoir put vous donnez un premier apperçut <br>
+        Je vous laisse maintenant imaginer les possibilités qu'il est possible de réaliser. Et j'espère vraiment que ce projet vous plaira <br>
+        autant que cela m'a plus à le réaliser ^^. <br><br>
+
+
     </div>
 </body>
 </html>

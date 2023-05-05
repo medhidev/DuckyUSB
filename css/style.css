@@ -9,7 +9,7 @@ body
 textarea
 {
     background-color: rgb(70, 70, 70);
-    color: rgb(212, 138, 0);
+    color: rgb(255, 115, 0);
     border: none;
 }
 
@@ -17,9 +17,21 @@ textarea:focus {
     outline:  none;
 }
 
+table#code
+{
+    padding: 10px;
+    background-color: black;
+}
+
+#video
+{
+    display: flex;
+    justify-content: center;
+}
+
 #copy
 {
-    background-color: #84e900;
+    background-color: #00eb7d;
     border-radius: 5px;
     padding: 5px;
     border: none;
@@ -35,7 +47,7 @@ textarea:focus {
 
 #reset
 {
-    background-color: rgb(255, 187, 0);
+    background-color: rgb(255, 115, 0);
     border-radius: 5px;
     padding: 5px;
     border: none;
@@ -63,21 +75,32 @@ a:hover
 }
 a{text-decoration: none;}
 
-#rightBottom
+.bas
 {
-    position: absolute;
+    background-color: #161616;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
     bottom: 0;
-    right: 0;
-}
-
-#leftBottom
-{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    width: 100%;
 }
 
 #doc
 {
     padding-left: 50px;
+}
+
+/* Barre de défilement verticale */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffbb00;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgb(26, 26, 26);
+    border-radius: 5px;
 }
